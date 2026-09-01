@@ -237,9 +237,10 @@ function rotateRole() {
 
     typingText.classList.add("is-changing");
 
+    roleIndex = (roleIndex + 1) % roles.length;
+    typingText.textContent = roles[roleIndex];
+
     window.setTimeout(() => {
-        roleIndex = (roleIndex + 1) % roles.length;
-        typingText.textContent = roles[roleIndex];
         typingText.classList.remove("is-changing");
     }, 260);
 }

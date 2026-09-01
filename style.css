@@ -389,16 +389,28 @@ p {
     min-height: 1.5em;
     margin: 0;
     display: inline-block;
+    line-height: 1.5;
 }
 
 #typingText {
     display: inline-block;
-    transition: opacity 260ms ease, transform 260ms ease;
+    min-width: 19ch;
+    animation: roleEnter 260ms ease both;
 }
 
 #typingText.is-changing {
-    opacity: 0;
-    transform: translateY(5px);
+    animation: roleEnter 260ms ease both;
+}
+
+@keyframes roleEnter {
+    from {
+        opacity: 0.65;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .typing-cursor {
