@@ -328,12 +328,11 @@ if (contactForm) {
 const revealElements =
     document.querySelectorAll(
         ".section-heading, " +
-        ".about-grid, " +
-        ".focus-card, " +
+        ".about-text-content, " +
+        ".about-image-side, " +
+        ".about-point, " +
         ".project-card, " +
-        ".contact-box, " +
-        ".personal-image-banner, " +
-        ".code-visual-grid"
+        ".contact-box"
     );
 
 

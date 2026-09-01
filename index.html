@@ -200,130 +200,7 @@
 
 
 
-<!-- =========================================================
-     PERSONAL IMAGE SECTION
-========================================================= -->
 
-<section class="personal-image-section">
-
-    <div class="container">
-
-        <div class="personal-image-banner">
-
-            <img
-                src="assets/profile.jpg"
-                alt="Shahd Alaa"
-                class="personal-image-img"
-            >
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CODE VISUAL SECTION
-========================================================= -->
-
-<section class="code-visual-section">
-
-    <div class="container">
-
-        <div class="code-visual-grid">
-
-            <div class="code-block">
-                <div class="code-block-header">
-                    <span class="code-dot red"></span>
-                    <span class="code-dot yellow"></span>
-                    <span class="code-dot green"></span>
-                    <span class="code-file-name">ApiController.cs</span>
-                </div>
-                <div class="code-block-body">
-                    <div class="code-line">
-                        <span class="line-num">1</span>
-                        <span class="code-keyword">using</span> Microsoft.AspNetCore.Mvc;
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">2</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">3</span>
-                        <span class="code-bracket">[</span><span class="code-attr">ApiController</span><span class="code-bracket">]</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">4</span>
-                        <span class="code-bracket">[</span><span class="code-attr">Route</span>(<span class="code-string">"api/[controller]"</span>)<span class="code-bracket">]</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">5</span>
-                        <span class="code-keyword">public class</span> <span class="code-type">UsersController</span> : <span class="code-type">ControllerBase</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">6</span>
-                        {
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">7</span>
-                        &nbsp;&nbsp;<span class="code-bracket">[</span><span class="code-attr">HttpGet</span><span class="code-bracket">]</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">8</span>
-                        &nbsp;&nbsp;<span class="code-keyword">public async</span> Task&lt;<span class="code-type">IActionResult</span>&gt; <span class="code-method">GetAll</span>()
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">9</span>
-                        &nbsp;&nbsp;{
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">10</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">var</span> users = <span class="code-keyword">await</span> _repo.<span class="code-method">GetAllAsync</span>();
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">11</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-method">Ok</span>(users);
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">12</span>
-                        &nbsp;&nbsp;}
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">13</span>
-                        }
-                    </div>
-                </div>
-            </div>
-
-            <div class="code-visual-text">
-
-                <span class="code-visual-label">Behind the Code</span>
-
-                <h2>Backend systems,<br>clean APIs,<br>reliable data.</h2>
-
-                <p>
-                    I write the code that runs behind the interface —
-                    server-side logic, database queries, authentication,
-                    and the integrations that tie everything together.
-                </p>
-
-                <div class="code-visual-tags">
-                    <span>ASP.NET Core</span>
-                    <span>REST APIs</span>
-                    <span>Entity Framework</span>
-                    <span>PostgreSQL</span>
-                    <span>SignalR</span>
-                    <span>JWT Auth</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -356,52 +233,64 @@
 
         <div class="about-grid">
 
-            <div class="about-text-content">
+            <div class="about-content-side">
 
-                <p>
-                    Hi, I'm Shahd — a Computer Science graduate focused on backend development and software architecture.
-                </p>
+                <div class="about-text-content">
 
-                <p>
-                    I build server-side applications, RESTful APIs, database-driven systems, and integrations that connect different parts of an application.
-                </p>
+                    <p>
+                        Hi, I'm Shahd — a Computer Science graduate focused on backend development and software architecture.
+                    </p>
+
+                    <p>
+                        I build server-side applications, RESTful APIs, database-driven systems, and integrations that connect different parts of an application.
+                    </p>
+
+                </div>
+
+                <div class="about-points">
+
+                    <div class="about-point">
+                        <span class="point-icon">01</span>
+                        <div>
+                            <h3>Backend Systems</h3>
+                            <p>Building structured and maintainable server-side applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-point">
+                        <span class="point-icon">02</span>
+                        <div>
+                            <h3>API Development</h3>
+                            <p>Designing RESTful APIs for reliable communication between applications and services.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-point">
+                        <span class="point-icon">03</span>
+                        <div>
+                            <h3>Databases</h3>
+                            <p>Working with relational databases, data modeling, Entity Framework Core, SQL Server, and PostgreSQL.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-point">
+                        <span class="point-icon">04</span>
+                        <div>
+                            <h3>Application Integration</h3>
+                            <p>Connecting applications, APIs, services, and external systems.</p>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="about-points">
-
-                <div class="about-point">
-                    <span class="point-icon">01</span>
-                    <div>
-                        <h3>Backend Systems</h3>
-                        <p>Building structured and maintainable server-side applications.</p>
-                    </div>
-                </div>
-
-                <div class="about-point">
-                    <span class="point-icon">02</span>
-                    <div>
-                        <h3>API Development</h3>
-                        <p>Designing RESTful APIs for reliable communication between applications and services.</p>
-                    </div>
-                </div>
-
-                <div class="about-point">
-                    <span class="point-icon">03</span>
-                    <div>
-                        <h3>Databases</h3>
-                        <p>Working with relational databases, data modeling, Entity Framework Core, SQL Server, and PostgreSQL.</p>
-                    </div>
-                </div>
-
-                <div class="about-point">
-                    <span class="point-icon">04</span>
-                    <div>
-                        <h3>Application Integration</h3>
-                        <p>Connecting applications, APIs, services, and external systems.</p>
-                    </div>
-                </div>
-
+            <div class="about-image-side">
+                <img
+                    src="assets/profile.jpg"
+                    alt="Shahd Alaa"
+                    class="about-profile-image"
+                >
             </div>
 
         </div>
@@ -727,6 +616,10 @@
 
                     </a>
 
+                </div>
+
+                <div class="contact-signature-image">
+                    <img src="assets/logo.jpg" alt="Shahd Alaa">
                 </div>
 
             </div>
