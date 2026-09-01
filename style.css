@@ -384,6 +384,22 @@ p {
     letter-spacing: -0.02em;
 }
 
+.hero-rotating-title {
+    color: var(--teal);
+    min-height: 1.5em; /* Prevent layout shift */
+    margin: 0;
+    display: inline-block;
+}
+
+.typing-cursor {
+    animation: blink 1s step-start infinite;
+    color: var(--ink);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 .hero-description {
     max-width: 560px;
     margin-bottom: 34px;
@@ -736,8 +752,8 @@ p {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center;
     display: block;
     transition: transform 0.55s ease;
 }
@@ -1194,8 +1210,8 @@ p {
 }
 
 .contact-signature-image img {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);

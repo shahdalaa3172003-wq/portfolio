@@ -216,3 +216,53 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         }
     });
 });
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const typingText = document.getElementById("typingText");
+const roles = [
+    "Backend Developer",
+    "API & Integration Engineer",
+    "ASP.NET Core Developer",
+    ".NET Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    if (!typingText) return;
+
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2000; // Pause at the end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 400; // Pause before typing next word
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+
+if (!reducedMotion) {
+    setTimeout(typeEffect, 500);
+} else if (typingText) {
+    typingText.textContent = roles[0];
+}
