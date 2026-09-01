@@ -165,6 +165,7 @@ p {
 .site-header {
     position: sticky;
     top: 0;
+    z-index: 20;
     z-index: 100;
     background: rgba(251, 248, 242, 0.88);
     backdrop-filter: blur(16px);
@@ -372,7 +373,8 @@ p {
     flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 26px;
-    animation: fadeSlideUp 0.9s 0.2s ease both;
+    /* Keep the server-rendered fallback visible before JavaScript starts. */
+    animation: none;
 }
 
 .hero-role h2 {
@@ -1137,6 +1139,7 @@ p {
 
     .navigation {
         position: absolute;
+        z-index: 30;
         top: 68px;
         left: 0;
         right: 0;
