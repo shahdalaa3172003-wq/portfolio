@@ -1,0 +1,27 @@
+{
+  "name": "v0-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahdalaa3172003-wq/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shahdalaa3172003-wq/portfolio/issues"
+  },
+  "homepage": "https://github.com/shahdalaa3172003-wq/portfolio#readme",
+  "devDependencies": {
+    "vite": "^8.2.2"
+  }
+}

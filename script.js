@@ -219,7 +219,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 
 /* =========================================================
-   TYPING EFFECT
+   SUBTLE ROLE ROTATION
 ========================================================= */
 
 const typingText = document.getElementById("typingText");
@@ -231,38 +231,22 @@ const roles = [
 ];
 
 let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
 
-function typeEffect() {
+function rotateRole() {
     if (!typingText) return;
 
-    const currentRole = roles[roleIndex];
+    typingText.classList.add("is-changing");
 
-    if (isDeleting) {
-        typingText.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeSpeed = isDeleting ? 40 : 80;
-
-    if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 2000; // Pause at the end
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
+    window.setTimeout(() => {
         roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 400; // Pause before typing next word
-    }
-
-    setTimeout(typeEffect, typeSpeed);
+        typingText.textContent = roles[roleIndex];
+        typingText.classList.remove("is-changing");
+    }, 260);
 }
 
-if (!reducedMotion) {
-    setTimeout(typeEffect, 500);
-} else if (typingText) {
+if (typingText) {
     typingText.textContent = roles[0];
+    if (!reducedMotion) {
+        window.setInterval(rotateRole, 3200);
+    }
 }
