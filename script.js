@@ -77,6 +77,14 @@ if (menuButton && navigation) {
         }
     });
 
+    /* Close menu when pressing Escape */
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navigation.classList.contains("is-open")) {
+            navigation.classList.remove("is-open");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+    });
+
 }
 
 
@@ -230,7 +238,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 
 /* =========================================================
-   SUBTLE ROLE ROTATION
+   TYPING EFFECT
 ========================================================= */
 
 const typingText = document.getElementById("typingText");
@@ -242,23 +250,39 @@ const roles = [
 ];
 
 let roleIndex = 0;
+let charIndex = roles[0].length;
+let isDeleting = true;
 
-function rotateRole() {
+function typeEffect() {
     if (!typingText) return;
 
-    typingText.classList.add("is-changing");
+    const currentRole = roles[roleIndex];
 
-    roleIndex = (roleIndex + 1) % roles.length;
-    typingText.textContent = roles[roleIndex];
+    if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
 
-    window.setTimeout(() => {
-        typingText.classList.remove("is-changing");
-    }, 260);
+    let typeSpeed = isDeleting ? 30 : 60;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2500; // Pause at the end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500; // Pause before typing next word
+    }
+
+    setTimeout(typeEffect, typeSpeed);
 }
 
-if (typingText) {
+if (!reducedMotion) {
+    if (typingText) typingText.textContent = roles[0];
+    setTimeout(typeEffect, 2500);
+} else if (typingText) {
     typingText.textContent = roles[0];
-    if (!reducedMotion) {
-        window.setInterval(rotateRole, 3200);
-    }
 }

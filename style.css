@@ -1150,6 +1150,8 @@ p {
         padding: 10px 16px 20px;
         background: var(--paper);
         border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
